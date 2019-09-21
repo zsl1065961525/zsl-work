@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+			<!--1.封装一个用于计算的函数
+			2.通过 prompt()函数,收取用户输入的数字和计算方式(+ - * /)
+			3.通过函数进行计算,直接弹出结果
+			4.请优先使用三目运算符(不使用也可以)-->
+		<script type="text/javascript">
+			var pro1 = prompt("请输入第一个数字");
+			var pro2 = prompt("请输入第二个数字");
+			var pro3 = prompt("请输入运算符");
+//           判断por3中输入的是否是运算符
+//			
+//			计算函数 if判断
+//           function jisuan(){
+//           	if (pro3 == "+") {
+//           		confirm(Number(pro1) + Number(pro2))
+//           	} else if (pro3 == "-"){
+//           		confirm(Number(pro1)  - Number(pro2))
+//           	} else if (pro3 == "*"){
+//           		confirm(Number(pro1)  * Number(pro2))
+//           	} else if (pro3 == "/"){
+//           		confirm(Number(pro1)  / Number(pro2))
+//           	} else{
+//           		alert('请输入运算符')
+//           	}
+//             
+//           }
+//			jisuan()
+			
+			
+//			三目运算
+            function jisuan(pro1,pro2,pro3){
+            	alert(pro3 === "+"? Number(pro1) + Number(pro2) : pro3 === "-"? Number(pro1) - Number(pro2): pro3 === "*"? Number(pro1) * Number(pro2) : pro3 === "/" ?  Number(pro1) / Number(pro2):alert("请输入运算符"));
+            }
+            jisuan(pro1,pro2,pro3)
+		</script>
+	</body>
+</html>
