@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--要求:3.8日妇女节,只有女性可享5折优惠,其他时间均没有优惠-->
+		<input type="date" name="inp" id="inp" value="" />
+		
+		<script type="text/javascript">
+			var inp = document.getElementById("inp")
+			var nw = confirm("女王请点击")
+//          console.log(nw)
+            inp.oninput = function(){
+            	alert(inp.value == "2019-03-08" && nw ? "5折" : "全款" )
+            	
+            }
+            
+            
+//          方法二
+//          inp.oninput = function(){
+//          if(inp.value == '2019-03-08' && nw){
+//          	alert("5折")
+//          }else{
+//          	alert("全款")
+//          }
+//          }
+		</script>
+	</body>
+</html>
