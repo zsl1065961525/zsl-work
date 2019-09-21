@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>请在输入框中输入两个数字</h1>
+		<input type="text" name="" id="inp1" value="" />
+		+
+		<input type="text" name="" id="inp2" value="" />
+		<button id="but">点击相加</button>
+		<!--<p>您计算的结果为:</p>-->
+		<h1 id="d1">
+			此处显示结果
+		</h1>
+		
+		<script type="text/javascript">
+//			先进行判断,判断输入的东西是不是数字,如果不是数字,弹出框出现弹出,如果是数字,进行计算
+		   var inp1 = document.getElementById('inp1')	
+		   var inp2 = document.getElementById('inp2')	
+		   var but = document.getElementById('but')
+		   var d1 = document.getElementById('d1')
+		   
+		   
+		   but.onclick = function(){
+		   	var val1 = parseInt(inp1.value)
+		    var val2 = parseInt(inp2.value)
+            var out = console.log(Number(val1+val2))
+            if (isNaN(val1)==false) {
+            	d1.innerHTML = Number(val1+val2)
+		    	
+		    }if(isNaN(val2)==false){
+		    	
+		    } else{
+		    	alert("请输入数字")
+		    }
+           
+		}
+		    
+		   
+		</script>
+	</body>
+</html>
