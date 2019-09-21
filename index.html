@@ -2,42 +2,52 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>银行取款系统</title>
 	</head>
 	<body>
-			<!--1.封装一个用于计算的函数
-			2.通过 prompt()函数,收取用户输入的数字和计算方式(+ - * /)
-			3.通过函数进行计算,直接弹出结果
-			4.请优先使用三目运算符(不使用也可以)-->
+		<!--1.只做一个模拟的银行取款机
+        2.设置一个银行卡号,密码和一个余额
+        3.用户输入卡号和密码后输入要取得金额
+        4.前提不能大于卡内余额
+        5.取完后显示取后余额-->
+		卡号:<input type="text" name="" id="kh" value="" /><p></p>
+		密码:<input type="password" name="mm" id="mm" value="" /><p></p>
+		<button id="dl">登录</button> 
+		<button id="qk">取款</button>
+		<h1 id="div">
+			<!--余额显示-->
+		</h1>
 		<script type="text/javascript">
-			var pro1 = prompt("请输入第一个数字");
-			var pro2 = prompt("请输入第二个数字");
-			var pro3 = prompt("请输入运算符");
-//           判断por3中输入的是否是运算符
-//			
-//			计算函数 if判断
-//           function jisuan(){
-//           	if (pro3 == "+") {
-//           		confirm(Number(pro1) + Number(pro2))
-//           	} else if (pro3 == "-"){
-//           		confirm(Number(pro1)  - Number(pro2))
-//           	} else if (pro3 == "*"){
-//           		confirm(Number(pro1)  * Number(pro2))
-//           	} else if (pro3 == "/"){
-//           		confirm(Number(pro1)  / Number(pro2))
-//           	} else{
-//           		alert('请输入运算符')
-//           	}
-//             
-//           }
-//			jisuan()
-			
-			
-//			三目运算
-            function jisuan(pro1,pro2,pro3){
-            	alert(pro3 === "+"? Number(pro1) + Number(pro2) : pro3 === "-"? Number(pro1) - Number(pro2): pro3 === "*"? Number(pro1) * Number(pro2) : pro3 === "/" ?  Number(pro1) / Number(pro2):alert("请输入运算符"));
-            }
-            jisuan(pro1,pro2,pro3)
+           var dl = document.getElementById('dl')
+           var qk = document.getElementById('qk')
+           
+//         设置账号,密码,余额
+           var k =123456789;
+           var m =123456;
+           var y =10000;
+           
+//         进行登录
+           dl.onclick = function(){
+	           if (kh.value !=k) {
+	           	  alert('请输入正确的卡号')
+	           } else if (mm.value !=m) {
+	           	  alert('请输入正确的密码')
+	           } else{
+	           	  div.innerHTML = '当前余额:'+y+'元';
+	           	  
+	           }
+           }
+//         点击取款按钮
+           qk.onclick =function qkbut(){
+          	if (kh.value !=k) {
+	           	  alert('请先登录')
+	           } else if (mm.value !=m) {
+	           	  alert('请先登录')
+	           } else{
+           	   var q =prompt('取款金额')
+           	   div.innerHTML = '当前余额:'+(y-q)+'元';
+           	  }
+           }
 		</script>
 	</body>
 </html>
