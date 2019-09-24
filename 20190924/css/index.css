@@ -1,0 +1,314 @@
+/*-------------------------全局-----------------------------*/
+body{
+	font-size: 14px;
+	color: #666;
+	margin: 0;
+	padding: 0;
+	background:#f4f4f4 ;
+}
+p,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a{
+	color: #666;
+	text-decoration: none;
+}
+
+.mine{
+	width: 900px;
+	/*border: 1px solid black;*/
+	margin: 0 auto;
+}
+
+
+/*-------------------------局部-----------------------------*/
+/*--------------导航-------------*/
+.nav{
+	background-color: rgb(63,81,181);
+	text-align: center;
+}
+.nav-one{
+	overflow: hidden;
+}
+.nav-img{
+	width: 120px;
+	height: 120px;
+    background: url(../img/site-logo.png) no-repeat;
+    background-size: cover;
+    margin: 20px auto;
+}
+.nav p{
+	color: white;
+	font-size: ;
+	margin-bottom: 10px;
+}
+.nav-tow{
+	display:inline-flex;
+	background-color: rgba(0,0,0,0.2);
+	height: 45px;
+	width: 100%;
+}
+.nav-ul{
+	display: inline-flex;
+	justify-content: space-around;
+	margin: 0 auto;
+}
+.nav-ul li a{
+	color: rgba(225,225,225,0.9);
+	display: inline-block;
+	justify-content: space-around;
+	line-height: 45px;
+	margin:0 auto;
+}
+.nav-tow a:hover{
+	color: white;
+}
+
+/*--------------主体-------------*/
+#mine{
+	background-color: white;
+	overflow: hidden;
+}	
+/*第一行*/	
+.mine-one{
+	margin:30px 0px;
+	box-shadow:0 5px 10px 0px  #999;
+}
+.mine-one-p1{
+	color: white;
+	width: 100%;
+	/*height: ;*/
+	background: url(../img/cover.jpg) no-repeat;
+	background-position:-10px -200px;
+	height: 290px;
+}
+.mine-one-p1 b{
+	display: inline-block;
+	margin-top:260px ;
+	margin-left: 20px;
+	font-size: 24px;
+	font-weight: 300;
+}
+.mine-one-p2{
+	border: 1px solid rgba(0,0,0,0.1);
+	/*display: inline-block;*/
+	padding: 10px 20px;
+	font-size: 13px;
+}
+.mine-one-p3{
+	border: 1px solid rgba(0,0,0,0.1);
+	padding: 8px 10px;
+	color: rgb(255, 64, 129);
+}
+.mine-one-p3 a{
+	color: rgb(255, 64, 129);
+	font-weight: 600;
+	width: 100px;
+	height: 30px;
+	background-color:rgba(0,0,0,0) ;
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+	padding: 3px 3px;
+}
+.mine-one-p3 a:hover{
+	background-color:rgba(0,0,0,0.1) ;
+}
+/*第二行*/
+.mine-tow{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 50px;
+}
+.mine-tow-img{
+	width: 200px;
+	height: 200px;
+	background-color: rgb(178, 223, 219);
+}
+.mine-tow-img img{
+	margin-left: 80px;
+	margin-top: 85px;
+}
+.mine-tow-p{
+	width: 650px;
+	height: 200px;
+	border: 1px solid rgba(0,0,0,0.1);
+	box-shadow:0 5px 10px 0px  #999;
+	
+}
+.mine-tow-p h4{
+	font-size: 24px;
+	font-weight: 300;
+	margin: 20px 15px 30px 20px;
+	color: black;
+}
+.mine-tow-p h5{
+	font-size: 14px;
+	font-weight: 400;
+	margin: 0 20px;
+	color: rgba(0, 0, 0, 0.54);
+	margin-bottom:9px ;
+}
+/*第三行*/
+.mine-three{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.mine-three1{
+	width: 280px;
+	height: 374px;
+	/*border: 1px solid black;*/
+	margin-bottom: 40px;
+	box-shadow:0 5px 10px 0px  #999;
+}
+.mine-three1 img{
+	width: 280px;
+	height: 190px;
+}
+.mine-three1 h3{
+	font-weight: 300;
+	color: #000000;
+	font-size: 24px;
+	margin: 10px 10px 10px 10px;
+}
+.mine-three1 p{
+	font-weight: 300;
+	margin: 0 10px;
+}
+/*第四行小按钮*/
+.mine-four{
+	margin-bottom: 40px;
+	margin-top: 10px;
+	
+}
+.mine-four a{
+	display:block;
+	margin: 0 auto;
+	width: 150px;
+	height: 40px;
+	color: white;
+	background-color: rgb(255, 64, 129);
+	font-weight: 600;
+	text-align: center;
+	line-height: 40px;
+	box-shadow:0 2px 5px 0px  #999;
+}
+/*灰色部分*/
+.grays{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+/*左侧*/
+.gray-left{
+	width: 583px;
+	height:256px ;
+	background-color: white;
+	overflow: hidden;
+	margin: 50px 0px;
+	box-shadow:0 4px 7px 0px  #999;
+}
+.gray-left h1{
+	font-weight: 300;
+	font-size: 24px;
+	color: black;
+	margin: 20px 20px;
+}
+.gray-left-top{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-startr ;
+	margin: 40px 0px;
+}
+.gray-left-top .icon-ziyuanxhdpi{
+	font-size:40px ;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.gray-left-top h2{
+	font-weight: 500;
+	font-size: 15px;
+	color: rgba(0,0,0,0.87);
+}
+.gray-left-top h3{
+	font-weight: 500;
+	font-size: 13px;
+	color: rgba(0,0,0,0.54);
+}
+/*右侧*/
+.gray-right{
+	width: 283px;
+	height: 256px;
+	background-color: rgb(62, 78, 184);
+	margin: 50px 0px;
+	box-shadow:0 4px 7px 0px  #999;
+}
+.gray-right-one{
+	color: white;
+	font-size: 24px;
+	padding: 20px;
+	margin-bottom: 40px;
+	
+}
+.gray-right-tow a{
+	color:white ;
+	font-weight: 600;
+	font-size: 13px;
+	margin: 0px 20px;
+	display: inline-block;
+	width:150px ;
+	height: 35px;
+	background-color: rgb(62, 78, 184);
+	line-height: 35px;
+	text-align: center;
+}
+.gray-right-tow a:hover{
+	background-color:rgba(0,0,0,0.1) ;
+}
+.icon-rili{
+	color: white;
+	font-size: 20px;
+}
+/*底部*/
+.footer{
+	height: 100px;
+	background-color: rgb(66, 66, 66);
+	color: white;
+	line-height: 100px;
+	text-align: center;
+}
+.footer a{
+	color: white;
+}
+.footer span{
+	color: rgb(158, 158, 158);
+}
+
+/*浮动图标*/
+/*.Floas a img{
+	display: inline-block;
+	width: 56px;
+	height: 56px;
+	background-color: rgb(255, 64, 129);
+}*/
+.Floats {
+	position: fixed;
+	bottom: 40px;
+    right: 40px;
+    
+}
+.Floats a{
+	display: inline-block;
+	width: 56px;
+	height: 56px;
+	background-color: rgb(255, 64, 129);
+	border-radius: 50%;
+	box-shadow:0 4px 7px 0px  #999;
+}
+.Floats a img{
+	margin: 15px 15px;
+}	
