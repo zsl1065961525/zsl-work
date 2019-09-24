@@ -127,6 +127,7 @@ a{
 	width: 200px;
 	height: 200px;
 	background-color: rgb(178, 223, 219);
+	box-shadow:0 5px 10px 0px  #999;
 }
 .mine-tow-img img{
 	margin-left: 80px;
