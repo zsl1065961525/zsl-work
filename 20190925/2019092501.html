@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				position: relative;
+			}
+			#box>div{
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				border: 1px solid black;
+				background: url(33.jpg);
+				opacity: 0;
+				transition:0.2s;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+//			获取div
+           var box = document.getElementById('box')
+           //         创建6个纵向表格
+           for (var i=0;i<6;i++) {
+           	//  创建10个横向表格
+           	 for(var j=0;j<10;j++){
+//         	 	添加div
+           	 	var div = document.createElement('div')
+           	 	box.appendChild(div)
+//         	 	每个div都向下移动50px
+           	    div.style.top = i*50+ 'px'
+//         	        每个div都向右移动50px
+           	    div.style.left = j*50+ 'px'
+//         	       每个背景都向左移动50px
+           	    div.style.backgroundPositionX = j*-50+ 'px'
+//         	       每个div都向上移动50px
+           	    div.style.backgroundPositionY = i*-50+ 'px'
+//         	       设置触碰事件
+           	    div.onmousemove = function(){
+//         	    	触碰那个那个透明度变1
+           	    	this.style.opacity= 1;
+           	    }
+           	 }
+           }
+		</script>
+	</body>
+</html>
