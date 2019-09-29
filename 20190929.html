@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册页面</title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<!--需求2:  
+			1. 做一个简单的注册界面  
+			2. 要求用户名和密码必须写才可以提交
+			3. 提交之后弹出注册成功
+			4. 如果有没有写的内容,进行提示
+			5. 用户准备填写时,在右侧提示改用户名是否可以注册
+			6.已经有的用户名可以用一个数组创建
+			7、已有用户名分别为'tom','jack','lili'
+			-->
+		用户名：<input type="text" name="in1" id="in1" value="" placeholder="请输入用户名"/><span id="s1"></span><br />
+		密码：<input type="password" name="in2" id="in2" value="" placeholder="请输入密码"/><span id="s2"></span></span><br />
+		<button id="but">提交</button>
+		<script type="text/javascript">
+			var in1 = document.getElementById('in1')
+			var in2 = document.getElementById('in2')
+			var s1 = document.getElementById('s1')
+			var s2 = document.getElementById('s2')
+			var but = document.getElementById('but')
+//			已存在用户名
+			var cz = ['tom','jack','lili']
+//			点击第二个输入框,判断第一个输入框的内容
+			in2.onfocus = function(){
+				if(in1.value == ''){
+					s1.innerText = '请输入用户名'
+				}else if(cz.indexOf(in1.value)!=-1){
+					s1.innerText =''
+					s1.innerText = '该用户名已存在'
+				}else{
+					s1.innerText =''
+					s1.innerText = '该用户名可用'
+				}
+			}
+//			点击按钮时,判断inp1和inp2的状态
+			but.onclick = function(){
+//				通过按钮判断in1的状态
+                if(in1.value == ''){
+					s1.innerText = '请输入用户名'
+				}else if(cz.indexOf(in1.value)!=-1){
+					s1.innerText =''
+					s1.innerText = '该用户名已存在'
+				}else{
+					s1.innerText =''
+					s1.innerText = '该用户名可用'
+				}
+//			    1.判断inp1
+                if (s1.innerText !== '该用户名可用') {
+                	alert('请输入正确的用户名')
+                } else if(in2.value == '' ){//判断in2的状态
+                	alert('请输入密码')
+                }else{
+                	alert('注册成功')
+                }
+			}
+		</script>
+	</body>
+</html>
