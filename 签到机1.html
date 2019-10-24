@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+		<input type="text" id="in1">
+		<button id="btn1">签到</button>
+		<button id="btn2">查看</button>
+		<h1 id="h1"></h1>
+		<script>
+			var in1 = document.getElementById('in1');
+			var btn1 = document.getElementById('btn1');
+			var btn2 = document.getElementById('btn2');
+			var h1 = document.getElementById('h1');
+			var a = '张三李四王五赵六黑七孙八九九';
+			var b = [];
+			btn1.onclick = function() {
+				b.push(in1.value);
+				in1.value = "";
+			}
+			btn2.onclick = function() {
+				var reg = new RegExp(b.join('|'),"ig");
+				var val = a.replace(reg,"");
+				h1.innerHTML = '未签到人有:' + val;
+			}
+		</script>
+	</body>
+
+</html>
