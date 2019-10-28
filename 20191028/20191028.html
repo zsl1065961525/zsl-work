@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>轮播图</title>
+		<style type="text/css">
+			*{
+    			margin:  0;
+    			padding: 0;
+			}
+			body {
+			    background-color: #E3EDCD;
+			}
+			.big>div{
+				display: none;
+			}
+			.big>div img{
+				width: 700px;
+			}
+			.samll{
+				width: 700px;
+				/*border: 1px solid black;*/
+			}
+			.samll div{
+				float: left;
+			}
+			/*.samll li:nth-child(1){
+				width: 70px;
+				height: 50px;
+				border: 1px solid black;
+				line-height: 50px;
+				text-align: center;
+				font-size: 18px;
+			}
+			.samll li:nth-child(8){
+				width: 70px;
+				height: 50px;
+				border: 1px solid black;
+				line-height: 50px;
+				text-align: center;
+				font-size: 18px;
+			}*/
+			.samll>div img{
+				width: 70px;
+				height: 50px;
+				margin: 0 8px;
+				 border: 2px solid rgba(0,0,0,0);
+			}
+			.samll>div:nth-child(1){
+				width: 70px;
+				height: 50px;
+				border: 2px solid black;
+				line-height: 50px;
+				text-align: center;
+				font-size: 20px;
+				font-weight: 600;
+				margin-left: 5px;
+			}
+			.samll>div:nth-child(1):hover{
+				cursor:pointer
+			}
+			.samll>div:nth-child(8){
+				width: 70px;
+				height: 50px;
+				border: 2px solid black;
+				line-height: 50px;
+				text-align: center;
+				font-size: 20px;
+				font-weight: 600;
+			}
+			.samll>div:nth-child(8):hover{
+				cursor:pointer
+			}
+			.super>div{
+				display: none;
+			}
+			.super img{
+				width: 1000px;
+				height: 600px;
+				border: 1px solid black;
+				margin-left: 20px;
+			}
+			.total>div{
+				float: left;
+			}
+			.samll .active{
+        	    border: 2px solid orangered;
+            }
+		</style>
+	</head>
+	<body>
+		<div class="total">
+			<div class="marp">
+				<div id="big" class="big">
+					<div style="display: block;">
+						<img src="1.jpg"/>
+					</div>
+					<div>
+						<img src="2.jpg"/>
+					</div>
+					<div>
+						<img src="3.jpg"/>
+					</div>
+					<div>
+						<img src="4.jpg"/>
+					</div>
+					<div>
+						<img src="5.jpg"/>
+					</div>
+					<div>
+						<img src="6.jpg"/>
+					</div>
+				</div>
+				<div class="samll" id="samll">
+					<div id="left">
+						<<
+					</div>
+					<div >
+						<img src="1.jpg" class="active"/>
+					</div>
+					<div>
+						<img src="2.jpg"/>
+					</div>
+					<div>
+						<img src="3.jpg"/>
+					</div>
+					<div>
+						<img src="4.jpg"/>
+					</div>
+					<div>
+						<img src="5.jpg"/>
+					</div>
+					<div>
+						<img src="6.jpg"/>
+					</div>
+				    <div id="right">
+				    	>>
+				    </div>
+				</div>
+				<p style="clear: both;"></p>
+			</div>
+			<div class="super" id="supers">
+				<div>
+					<img src="1.jpg"/>
+				</div>
+				<div>
+					<img src="2.jpg"/>
+				</div>
+				<div>
+					<img src="3.jpg"/>
+				</div>
+				<div>
+					<img src="4.jpg"/>
+				</div>
+				<div>
+					<img src="5.jpg"/>
+				</div>
+				<div>
+					<img src="6.jpg"/>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var big = document.getElementById('big')
+			var divs = big.getElementsByTagName('div')
+			var samll = document.getElementById('samll')
+			var imgs = samll.getElementsByTagName('img')
+			var supers = document.getElementById('supers') 
+			var divp = supers.getElementsByTagName('div')
+			var left = document.getElementById('left')
+			var right = document.getElementById('right')
+			
+			
+			for (var i=0;i < imgs.length;i++) {
+	    	  imgs[i].setAttribute('z',i)
+	    	   imgs[i].onclick = function(){
+	    	   	  for(var j=0;j<imgs.length;j++){
+	    	   		  divs[j].style.display = 'none'
+	    	   	  }
+	    	   	divs[this.getAttribute('z')].style.display = 'block'
+	    	   }
+	    	}
+			
+			
+//			鼠标放入
+			
+			 for (var i=0;i < divs.length;i++) {
+	    	   divs[i].setAttribute('z',i)
+	    	   divs[i].onmouseenter = function(){
+	    	   	  for(var j=0;j<divs.length;j++){
+	    	   		  divp[j].style.display = 'none'
+	    	   	  }
+	    	   	  divp[this.getAttribute('z')].style.display = 'block'
+	    	   }
+	    	   divs[i].onmouseleave = function(){
+	    	   	  divp[this.getAttribute('z')].style.display = 'none'
+	    	   }
+	    	}
+			  
+			
+			var 数字= 0
+			
+			
+			
+         left.onclick = function(){
+    		数字--;
+            if(数字 == -1){
+            	数字 = divs.length-1
+            }
+            for(var j=0;j<imgs.length;j++){
+	    	   		  divs[j].style.display = 'none'
+	    	   		  imgs[j].className = ''
+	    	}
+            imgs[数字].className = 'active'
+            divs[数字].style.display = 'block'
+    	 }
+        
+         right.onclick = moveRight;
+		 timer=setInterval(moveRight,2000);	
+		 
+		 for(var n=0;n<divs.length;n++){
+            divs[n].onmousemove=function(){
+            clearInterval(timer);
+           }
+            divs[n].onmouseout=function(){
+            clearInterval(timer);
+            timer=setInterval(moveRight,2000);
+           }
+        }
+        //	    封装函数
+          function moveRight(){
+             数字++;
+            if(数字 == imgs.length){
+            	数字 = divs.length=0
+            }
+            for(var j=0;j<imgs.length;j++){
+	    	   		   divs[j].style.display = 'none'
+	    	   		  imgs[j].className = ''
+	    	}
+            imgs[数字].className = 'active'
+            divs[数字].style.display = 'block'
+        }
+			
+		</script>
+	</body>
+</html>
