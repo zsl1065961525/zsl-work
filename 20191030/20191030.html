@@ -61,7 +61,7 @@
 			var myul = document.getElementById('myul')
 			var lis = myul.getElementsByTagName('li')
 			var li = document.getElementById('li')
-			li.onmouseenter = function(){
+			li.onclick = function(){
 				for(var i=0;i<lis.length;i++){
 					lis[i].style.left = i*100+'px'
 					lis[i].style.transition = 2+'s'
