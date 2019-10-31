@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<script src="jquery.js"></script>
+		<style type="text/css">
+			td{
+				width: 200px;
+				text-align: center;
+			}
+			#num1,#num2{
+				display: inline-block;
+				width: 50px;
+				height: 20px;
+				border: 1px solid black;
+				font-size: 16px;
+				text-align: center;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<table border="black" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>选择</td>
+				<td>商品</td>
+				<td>数量</td>
+				<td>单价/元</td>
+				<td>总价/元</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="ball" id="checx1" value="" /></td>
+				<td>华为mate20</td>
+				<td>
+					<button id="reduce1">-</button>
+					<span id="num1">1</span>
+					<button id="plus1">+</button>
+				</td>
+				<td>1999</td>
+				<td id="price1"><span>1999</span></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="ball" id="checx2" value="" /></td>
+				<td>小米8</td>
+				<td>
+					<button id="reduce2">-</button>
+					<span id="num2">1</span>
+					<button id="plus2">+</button>
+				</td>
+				<td>2999</td>
+				<td id="price2"><span>2999</span></td>
+			</tr>
+			<tr>
+				<td>全选:<input type="checkbox" name="" id="quan" value="" /></td>
+				<td></td>
+				<td></td>
+				<td>总价:</td>
+				<td id="price"><span>0</span></td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			$('#plus1').click(function(){
+            	  $('#num1').text(Number(num1.innerText)+1)
+            	  $('#price1').text(Number(price1.innerText)+1999)
+                })
+                $('#reduce1').click(function(){
+            	  $('#num1').text(Number(num1.innerText)-1)
+            	  $('#price1').text(Number(price1.innerText)-1999)
+                })
+			
+            $('#plus2').click(function(){
+            	$('#num2').text(Number(num2.innerText)+1)
+            	$('#price2').text(Number(price2.innerText)+1999)
+            	
+            })
+            $('#reduce2').click(function(){
+            	$('#num2').text(Number(num2.innerText)-1)
+            	$('#price2').text(Number(price2.innerText)-2999)
+            })
+            
+//          全选
+            //选1时
+            $('#checx1').change(function(){
+            	if ($('#checx1').prop('checked')) {
+            		$('#price').text(Number(price1.innerText))
+            	} else{
+            		$('#price').text(0)
+            	}
+            })
+            
+            //选2时
+            $('#checx2').change(function(){
+            	if ($('#checx2').prop('checked')) {
+            		$('#price').text(Number(price2.innerText))
+            	} else{
+            		$('#price').text(0)
+            	}
+            })
+            
+            //即选1又选2时
+
+            
+             
+            //全选
+            $('#quan').change(function(){
+            	if ($('#quan').prop('checked')) {
+            		$('[name = ball]').prop('checked',true)
+            		$('#price').text(Number(price1.innerText)+Number(price2.innerText))
+            	} else{
+            		$('[name = ball]').prop('checked',false)
+            		$('#price').text(0)
+            	}
+            })
+		</script>
+	</body>
+</html>
